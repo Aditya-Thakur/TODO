@@ -1,41 +1,38 @@
-var tasks = [
-    {
+var tasks = [{
         "id": 1,
-        "value" : "Get Newspaper"
+        "value": "Get Newspaper"
     },
     {
         "id": 2,
-        "value" : "Get Milk"
+        "value": "Get Milk"
     },
     {
         "id": 3,
-        "value" : "Do Laundary"
+        "value": "Do Laundary"
     },
     {
         "id": 4,
-        "value" : "Cook Lunch"
+        "value": "Cook Lunch"
     },
     {
         "id": 5,
-        "value" : "Visit Grandma"
+        "value": "Visit Grandma"
     },
 ];
-var completed = [
-    {
-        "id": 10,
-        "value" : "Take Medicine"
-    }
-];
+var completed = [{
+    "id": 10,
+    "value": "Take Medicine"
+}];
 
 function fillValues() {
     let taskList = "<ul>";
     tasks.forEach(task => {
-        taskList += "<li title='Click to complete' onclick='markComplete("+task.id+")'>" + task.value + "</li>";
+        taskList += "<li><span title='Click to mark complete' onclick='markComplete(" + task.id + ")'>" + task.value + "</span><span title='Click to delete' onclick='deleteTask(" + task.id + ")'>❌</span></li>";
     });
-    taskList+= "</ul>";
+    taskList += "</ul>";
     let completedList = "<ul>";
     completed.forEach(comp => {
-        completedList += "<li>" + comp.value + "</li>";
+        completedList += "<li title='Click to mark uncomplete' onclick='markUncomplete(" + comp.id + ")'>" + comp.value + "</li>";
     });
     completedList += "</ul>"
     // let mytask = document.getElementById('allTasks');
@@ -46,21 +43,20 @@ function fillValues() {
 
 function addTask() {
     let element = (document.getElementById('taskInput'));
-    if(element.value != "" && element.value.length > 2) {
+    if (element.value != "" && element.value.length > 2) {
         tasks.push({
-            id: tasks.length + 1,
+            id: tasks[tasks.length - 1].id + 1,
             value: element.value
         });
         element.value = "";
         fillValues();
         // changeLogo();
-        console.log(tasks);
-    } else if(element.value == "") {
+    } else if (element.value == "") {
         alert("Empty value not allowed.");
-    } else if (element.value.length <= 2 ) {
+    } else if (element.value.length <= 2) {
         alert("Too short value.");
     }
-    
+
 }
 
 // function changeLogo() {
@@ -71,8 +67,8 @@ function addTask() {
 function markComplete(id) {
     let completedTask;
     let newTaskList = [];
-    tasks.map( task => {
-        if(task.id == id) {
+    tasks.forEach(task => {
+        if (task.id == id) {
             completedTask = task;
         } else {
             newTaskList.push(task);
@@ -81,10 +77,34 @@ function markComplete(id) {
     completed.push(completedTask);
     tasks = newTaskList;
     fillValues();
-
 }
 
-window.onload = function() {
-    console.log("Hello world!");
+function deleteTask(id) {
+    let newList = [];
+    tasks.forEach(task => {
+        if (task.id != id) {
+            newList.push(task);
+        }
+    });
+    tasks = newList;
     fillValues();
-  };
+}
+
+function markUncomplete(id) {
+    let uncompletedTask;
+    let newTasksList = [];
+    completed.forEach(task => {
+        if (task.id == id) {
+            uncompletedTask = task;
+        } else {
+            newTasksList.push(task);
+        }
+    })
+    tasks.push(uncompletedTask);
+    completed = newTasksList;
+    fillValues();
+}
+
+window.onload = function () {
+    fillValues();
+};
