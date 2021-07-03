@@ -88,6 +88,6 @@ body, html {
 }
 
 
-#allTasks li {
+#allTasks, #completedTask {
     cursor: pointer;
 }
