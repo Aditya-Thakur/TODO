@@ -1,0 +1,93 @@
+:root {
+    --bg-color: rgb(37, 133, 120);
+    --primary-color: rgb(255, 255, 255);
+    --secondary-color:rgb(41, 255, 244);
+    --nav-bg-color: rgb(49, 14, 0);
+  }
+
+body, html {
+    width: 100%;
+    height: auto;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+}
+
+.container {
+    display: grid;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--nav-bg-color);
+    padding: 0.2em;
+}
+
+.logo {
+    font-size: large;
+    padding: 0.5em;
+    color: var(--secondary-color)
+}
+
+.right {
+    display: flex;
+    color: var(--secondary-color);
+    justify-content: space-between;
+}
+
+.column {
+    font-size: large;
+    padding: 0.5em;
+}
+
+.column:hover { 
+    cursor: pointer;    
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    margin-bottom: -0.2em;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.active {
+    text-decoration: underline;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    margin-bottom: -0.2em;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.content {
+    padding-top: 2em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 var(--secondary-color);
+    width: 30%;
+    overflow: hidden;
+}
+
+.title {
+    text-align: center;
+    background-color: var(--nav-bg-color);
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: space-around;
+    padding:0.2em;
+}
+
+.add-task {
+    background-color: var(--secondary-color);
+    /* border-radius: 50%; */
+    color:var(--nav-bg-color);
+    font-size: larger;
+    font-weight: bold;
+}
+
+
+#allTasks li {
+    cursor: pointer;
+}

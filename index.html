@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>MYTODOS | Home</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="./scripts/script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+
+        <header>
+            <div class="row">
+                <div class="left">
+                    <div id="logo" class="logo">
+                        MyTODOS
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="column active">Home</div>
+                    <div class="column">About Us</div>
+                    <div class="column">Contact Us</div>
+                    <div class="column">Logout</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="card">
+                <div class="title">
+                    <span>My Tasks</span>
+                </div>
+                <div id="allTasks">Loading...</div>
+                <input type="text" name="newTask" id="taskInput">
+                <button class="add-task" onclick="addTask()">Add</button>
+            </div>
+            <div class="card">
+                <div class="title">Completed Tasks</div>
+                <div id="completedTask">Loading...</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
