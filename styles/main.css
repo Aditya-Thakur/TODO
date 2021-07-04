@@ -92,7 +92,7 @@ body, html {
     cursor: pointer;
 }
 
-#allTasks ul li {
+#allTasks ol li {
     display:flex;
     justify-content: space-between;
 }
