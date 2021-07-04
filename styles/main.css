@@ -94,7 +94,7 @@ body, html {
 
 #allTasks ol li {
     display:flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .delete-icon {
