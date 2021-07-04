@@ -27,7 +27,7 @@ var completed = [{
 function fillValues() {
     let taskList = "<ul>";
     tasks.forEach(task => {
-        taskList += "<li><span title='Click to mark complete' onclick='markComplete(" + task.id + ")'>" + task.value + "</span><span title='Click to delete' onclick='deleteTask(" + task.id + ")'>❌</span></li>";
+        taskList += "<li><span title='Click to mark complete' onclick='markComplete(" + task.id + ")'>" + task.value + "</span><span class='delete-icon' title='Click to delete' onclick='deleteTask(" + task.id + ")'>❌</span></li>";
     });
     taskList += "</ul>";
     let completedList = "<ul>";
