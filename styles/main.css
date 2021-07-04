@@ -97,6 +97,6 @@ body, html {
     justify-content: space-between;
 }
 
-delete-icon {
+.delete-icon {
      padding : 2px;
 }
