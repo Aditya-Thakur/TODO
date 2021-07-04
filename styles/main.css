@@ -96,3 +96,7 @@ body, html {
     display:flex;
     justify-content: space-between;
 }
+
+delete-icon {
+     padding : 2px;
+}
