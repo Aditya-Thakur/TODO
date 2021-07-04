@@ -25,16 +25,16 @@ var completed = [{
 }];
 
 function fillValues() {
-    let taskList = "<ul>";
+    let taskList = "<ol>";
     tasks.forEach(task => {
         taskList += "<li><span title='Click to mark complete' onclick='markComplete(" + task.id + ")'>" + task.value + "</span><span class='delete-icon' title='Click to delete' onclick='deleteTask(" + task.id + ")'>❌</span></li>";
     });
-    taskList += "</ul>";
-    let completedList = "<ul>";
+    taskList += "</ol>";
+    let completedList = "<ol>";
     completed.forEach(comp => {
         completedList += "<li title='Click to mark uncomplete' onclick='markUncomplete(" + comp.id + ")'>" + comp.value + "</li>";
     });
-    completedList += "</ul>"
+    completedList += "</ol>"
     // let mytask = document.getElementById('allTasks');
     // mytask.innerHTML = taskList;
     document.getElementById('allTasks').innerHTML = taskList;
