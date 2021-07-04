@@ -91,3 +91,8 @@ body, html {
 #allTasks, #completedTask {
     cursor: pointer;
 }
+
+#allTasks ul li {
+    display:flex;
+    justify-content: space-between;
+}
