@@ -6,9 +6,13 @@
   }
 
 @media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
+  :root {
+    --bg-color: rgb(255, 255, 255);
+    --primary-color: rgb(0, 0, 0);
+    --secondary-color:rgb(41, 255, 244);
+    --nav-bg-color: rgb(49, 14, 0);
   }
+
 }
 
 body, html {
