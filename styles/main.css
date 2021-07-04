@@ -5,6 +5,12 @@
     --nav-bg-color: rgb(49, 14, 0);
   }
 
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
 body, html {
     width: 100%;
     height: auto;
